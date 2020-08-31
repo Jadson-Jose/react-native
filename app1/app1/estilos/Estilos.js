@@ -19,7 +19,7 @@ export default StyleSheet.create({
     },
 
     textoPadrao: {
-        color: '#fff',
+        color: '#000',
         fontSize: 20
     }
 })
