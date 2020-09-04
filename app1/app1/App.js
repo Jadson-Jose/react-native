@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Image } from 'react-native';
 // import C1 from '../app1/componentes/comp1';
 import Caixas from './componentes/Caixas';
 import Estilos from './estilos/Estilos';
@@ -19,7 +19,14 @@ import Estilos from './estilos/Estilos';
 export default function App1() {
   let vexibir = true;
   return (
+
     <View style={Estilos.container}>
+      <Image
+        source={require('./assets/tema-red-bull.jpg')}
+        style={estilos.logo}
+      />
+
+
       <Caixas exibir={vexibir} />
       <Text style={Estilos.textoPadrao}>Jadson jose da Silva</Text>
       <Text style={Estilos.textoTitulo}>Jadson jose da Silva</Text>
@@ -28,3 +35,10 @@ export default function App1() {
     </View>
   );
 };
+
+const estilos = StyleSheet.create({
+  logo: {
+    width: 350,
+    resizeMode: 'contain'
+  }
+})
