@@ -6,15 +6,29 @@ import {
   StyleSheet,
   View,
   Text,
-} from 'react-native';
+  ImageBackground,
+}
+  from 'react-native';
+
+const imgbg1 = './assets/img/bg1.jpg';
+const imgbg2 = './assets/img/bg2.jpg';
+const imgbg3 = './assets/img/bg3.jpg';
+
 
 export default function App1() {
   return (
     <View style={Estilos.container}>
 
-      <Text style={Estilos.textoPadrao}>Marcia Regina da Silva</Text>
-      <Text style={Estilos.textoTitulo}>Jadson jose da Silva</Text>
-      <Lp />
+      <ImageBackground
+        source={require(imgbg3)}
+        style={estilos.imagemFundo}
+      >
+
+        <Text style={Estilos.textoPadrao}>Marcia Regina da Silva</Text>
+        <Text style={Estilos.textoTitulo}>Jadson jose da Silva</Text>
+        {/* <Lp /> */}
+
+      </ImageBackground>
 
     </View>
   );
@@ -22,7 +36,14 @@ export default function App1() {
 
 const estilos = StyleSheet.create({
   logo: {
-    width: 350,
+    // width: 350,
     resizeMode: 'contain'
+  },
+  imagemFundo: {
+    flex: 1,
+    resizeMode: "cover",
+    width: "100%",
+
+
   }
 })
