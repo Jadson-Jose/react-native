@@ -1,34 +1,26 @@
-import React from 'react';
-import Estilos from './estilos/Estilos';
-import Lp from './componentes/ListaPlana';
+import React, { useState } from 'react';
+import Estilos from './estilos/Estilos.js';
+import CarraC from './componentes/Carroc';
 
 import {
   StyleSheet,
   View,
   Text,
-  ImageBackground,
-}
-  from 'react-native';
+  Button
 
-const imgbg1 = './assets/img/bg1.jpg';
-const imgbg2 = './assets/img/bg2.jpg';
-const imgbg3 = './assets/img/bg3.jpg';
+} from 'react-native';
 
 
 export default function App1() {
+
+  const [ligado, setLigado] = useState(false);
+
   return (
     <View style={Estilos.container}>
 
-      <ImageBackground
-        source={require(imgbg3)}
-        style={estilos.imagemFundo}
-      >
-
-        <Text style={Estilos.textoPadrao}>Marcia Regina da Silva</Text>
-        <Text style={Estilos.textoTitulo}>Jadson jose da Silva</Text>
-        {/* <Lp /> */}
-
-      </ImageBackground>
+          <Text>Marcia Regina da Silva</Text>
+          <Text>Jadson jose da Silva</Text>
+          <CarraC nome="Golf"/>
 
     </View>
   );
@@ -36,14 +28,8 @@ export default function App1() {
 
 const estilos = StyleSheet.create({
   logo: {
-    // width: 350,
+    width: 350,
     resizeMode: 'contain'
-  },
-  imagemFundo: {
-    flex: 1,
-    resizeMode: "cover",
-    width: "100%",
-
-
   }
+
 })
