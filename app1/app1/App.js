@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Estilos from './estilos/Estilos.js';
-import CarraC from './componentes/Carroc';
+import CxTx from './componentes/Caixa_de_texto';
+
 
 import {
   StyleSheet,
-  View,
   Text,
-  Button
+  SafeAreaView
 
 } from 'react-native';
 
@@ -16,13 +16,12 @@ export default function App1() {
   const [ligado, setLigado] = useState(false);
 
   return (
-    <View style={Estilos.container}>
+    <SafeAreaView style={Estilos.container}>
 
-          <Text>Marcia Regina da Silva</Text>
-          <Text>Jadson jose da Silva</Text>
-          <CarraC nome="Golf"/>
-
-    </View>
+      <Text>Marcia Regina da Silva</Text>
+      <Text>Jadson jose da Silva</Text>
+      <CxTx />
+    </SafeAreaView>
   );
 };
 
