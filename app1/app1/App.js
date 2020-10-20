@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Estilos from './estilos/Estilos.js';
-import CxTx from './componentes/Caixa_de_texto';
+
+import Rolagem from './componentes/Rolagem'
 
 
 import {
@@ -20,7 +21,8 @@ export default function App1() {
 
       <Text>Marcia Regina da Silva</Text>
       <Text>Jadson jose da Silva</Text>
-      <CxTx />
+
+      <Rolagem />
     </SafeAreaView>
   );
 };
