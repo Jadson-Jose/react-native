@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Estilos from './estilos/Estilos.js';
-import Toque from './componentes/Toque';
+import Modal from './componentes/Modal';
 
 
 import {
@@ -20,7 +20,7 @@ export default function App1() {
 
       <Text>Marcia Regina da Silva</Text>
       <Text>Jadson jose da Silva</Text>
-      <Toque />
+      <Modal />
 
     </SafeAreaView>
   );
