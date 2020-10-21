@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Estilos from './estilos/Estilos.js';
-
-import Rolagem from './componentes/Rolagem'
+import Toque from './componentes/Toque';
 
 
 import {
@@ -21,8 +20,8 @@ export default function App1() {
 
       <Text>Marcia Regina da Silva</Text>
       <Text>Jadson jose da Silva</Text>
+      <Toque />
 
-      <Rolagem />
     </SafeAreaView>
   );
 };
