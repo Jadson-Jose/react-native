@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 
 export default function () {
+
+    const [atualizando, setAtualizando] = useState(false);
+    function aoAtualizando() {
+        setAtualizando(true);
+        setTimeout(() => { setAtualizando(false) }, 3000);
+    }
+
     return (
         <View style1={{ flex: 1 }}>
             <ScrollView style={{ backgroundColor: '#333', padding: 15 }}>
