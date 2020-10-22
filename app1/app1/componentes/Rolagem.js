@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, RefreshControl } from 'react-native';
 
 export default function () {
 
@@ -11,7 +11,16 @@ export default function () {
 
     return (
         <View style1={{ flex: 1 }}>
-            <ScrollView style={{ backgroundColor: '#333', padding: 15 }}>
+            <ScrollView style={{ backgroundColor: '#333', padding: 15 }}
+                refreshControl={
+                    <RefreshControl
+                        refreshing={atualizando}
+                        onRefresh={aoAtualizando}
+
+                    />
+                }
+
+            >
                 <Text style={{ color: '#eee' }}>
                     Laboris ipsum elit et laboris irure aute sint cupidatat ipsum eiusmod labore. Voluptate officia commodo sunt enim magna reprehenderit voluptate magna. Reprehenderit culpa sit ullamco dolore reprehenderit enim excepteur. Et eiusmod dolor et reprehenderit consequat est anim ex mollit non. Ipsum ea enim id eu ex occaecat ea nisi esse aliqua aliquip proident minim exercitation.
 

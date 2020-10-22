@@ -1,27 +1,47 @@
 import React, { useState } from 'react';
 import Estilos from './estilos/Estilos.js';
-import Rl from './componentes/Rolagem';
+
 
 
 import {
   StyleSheet,
   Text,
-  SafeAreaView
+  SafeAreaView,
+  StatusBar,
+  Button
 
 } from 'react-native';
 
 
 export default function App1() {
 
-  const [ligado, setLigado] = useState(false);
+  const [cor, setCor] = useState("black");
 
   return (
     <SafeAreaView style={Estilos.container}>
-
+      <StatusBar
+        backgroundColor={cor}
+        barStyle="dafault"
+        hidden={false}
+      />
       <Text>Marcia Regina da Silva</Text>
       <Text>Jadson jose da Silva</Text>
-      <Rl />
 
+      <Button
+        title="Vermelho"
+        onPress={() => { setCor("red") }}
+
+      />
+
+      <Button
+        title="Azul"
+        onPress={() => { setCor("blue") }}
+      />
+
+      <Button
+        title="Verde"
+        onPress={() => { setCor("green") }}
+      />
     </SafeAreaView>
   );
 };
