@@ -24,9 +24,9 @@ function TelaHome({ navigation }) {
         title="Tela Canal"
         onPress={() => navigation.navigate('Canal')}
       />
-      <Button 
-      title = "Tela Cursos"
-      onPress = {()=>navigation.navigate('Cursos')}
+      <Button
+        title="Tela Cursos"
+        onPress={() => navigation.navigate('Cursos')}
       />
     </View>
   );
@@ -91,12 +91,36 @@ export default function App1() {
         <Pilha.Screen
           name="Home"
           component={TelaHome}
-          options={{ title: "Tela Inicial" }}
+          options={{
+            title: "Tela Inicial",
+            headerStyle: {
+              backgroundColor: '#008'
+            },
+            headerTintColor: '#fff',
+            headerRight: () => (
+              <Button
+                title="Cursos"
+                color="#000"
+                onPress={() => alert('Botão Cursos Clicado')}
+
+              />
+            )
+
+          }}
         />
         <Pilha.Screen
           name="Canal"
           component={TelaCanal}
-          options={{ title: 'Tela Canal' }}
+          options={{
+            title: 'Tela Canal',
+            headerStyle: {
+              backgroundColor: '#008'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold'
+            }
+          }}
         />
         <Pilha.Screen
           name="Cursos"
