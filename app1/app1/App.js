@@ -2,7 +2,7 @@ import React from 'react';
 import Estilos from './estilos/Estilos.js';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
 import {
@@ -13,21 +13,14 @@ import {
 
 } from 'react-native';
 
-const Pilha = createStackNavigator();
+const Guias = createBottomTabNavigator();
 
 function TelaHome({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Tela Home</Text>
       <Text>Jadson Jose</Text>
-      <Button
-        title="Tela Canal"
-        onPress={() => navigation.navigate('Canal')}
-      />
-      <Button
-        title="Tela Cursos"
-        onPress={() => navigation.navigate('Cursos')}
-      />
+
     </View>
   );
 }
@@ -37,14 +30,7 @@ function TelaCanal({ navigation }) {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Tela Canal</Text>
       <Text>Marcia Regina</Text>
-      <Button
-        title="Home"
-        onPress={() => navigation.navigate("Home")}
-      />
-      <Button
-        title="Voltar"
-        onPress={() => navigation.goBack()}
-      />
+
     </View>
   );
 }
@@ -62,33 +48,13 @@ function TelaCursos({ navigation }) {
     </View>
   );
 }
-function TelaCursoReactNative({ route, navigation }) {
-  // const { aulas } = route.params;
-  // const { autor } = route.params;
-  const aulas = route.params.aulas;
-  const autor = route.params.autor;
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Curso de React Native</Text>
-      <Text>Aulas: {aulas}</Text>
-      <Text>Autor: {autor}</Text>
-      <Button
-        title="Home"
-        onPress={() => navigation.navigate('Home')}
-      />
-      <Button
-        title="Voltar para cursos"
-        onPress={() => navigation.goBack()}
-      />
-    </View>
-  );
-}
+
 
 export default function App1() {
   return (
     <NavigationContainer>
-      <Pilha.Navigator initialRouteName="TelaHome">
-        <Pilha.Screen
+      <Guias.Navigator initialRouteName="TelaHome">
+        <Guias.Screen
           name="Home"
           component={TelaHome}
           options={{
@@ -108,7 +74,7 @@ export default function App1() {
 
           }}
         />
-        <Pilha.Screen
+        <Guias.Screen
           name="Canal"
           component={TelaCanal}
           options={{
@@ -122,17 +88,13 @@ export default function App1() {
             }
           }}
         />
-        <Pilha.Screen
+        <Guias.Screen
           name="Cursos"
           component={TelaCursos}
           options={{ title: 'Cursos do Canal' }}
         />
-        <Pilha.Screen
-          name="CursoReactNative"
-          component={TelaCursoReactNative}
-          options={{ title: 'Curso de React Native' }}
-        />
-      </Pilha.Navigator>
+
+      </Guias.Navigator>
     </NavigationContainer>
   );
 };
