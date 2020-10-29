@@ -3,6 +3,8 @@ import Estilos from './estilos/Estilos.js';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import TelaCanal from './componentes/TelaCanal';
 
 
 import {
@@ -13,7 +15,7 @@ import {
 
 } from 'react-native';
 
-const Guias = createBottomTabNavigator();
+const Gavetas = createDrawerNavigator();
 
 function TelaHome({ navigation }) {
   return (
@@ -25,26 +27,13 @@ function TelaHome({ navigation }) {
   );
 }
 
-function TelaCanal({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Tela Canal</Text>
-      <Text>Marcia Regina</Text>
 
-    </View>
-  );
-}
 
 function TelaCursos({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Tela Cursos</Text>
-      <Button
-        title="React Native"
-        onPress={() => navigation.navigate('CursoReactNative', {
-          aulas: 100, autor: 'Jadson'
-        })}
-      />
+
     </View>
   );
 }
@@ -53,8 +42,8 @@ function TelaCursos({ navigation }) {
 export default function App1() {
   return (
     <NavigationContainer>
-      <Guias.Navigator initialRouteName="TelaHome">
-        <Guias.Screen
+      <Gavetas.Navigator initialRouteName="TelaHome">
+        <Gavetas.Screen
           name="Home"
           component={TelaHome}
           options={{
@@ -74,7 +63,7 @@ export default function App1() {
 
           }}
         />
-        <Guias.Screen
+        <Gavetas.Screen
           name="Canal"
           component={TelaCanal}
           options={{
@@ -88,13 +77,13 @@ export default function App1() {
             }
           }}
         />
-        <Guias.Screen
+        <Gavetas.Screen
           name="Cursos"
           component={TelaCursos}
           options={{ title: 'Cursos do Canal' }}
         />
 
-      </Guias.Navigator>
+      </Gavetas.Navigator>
     </NavigationContainer>
   );
 };
